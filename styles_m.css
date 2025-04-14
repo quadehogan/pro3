@@ -1,0 +1,224 @@
+:root {
+    --main-color: hsl(46, 62%, 85%);
+    --secondary-color: #ad494f;
+    --black: #000;
+    --main-color-sl: hsl(46, 62%, 95%);
+    --button-color: hsl(356, 41%, 70%);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--main-color-sl);
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--secondary-color);
+}
+
+.controls {
+    text-align: center;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+#search-bar {
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid var(--main-color);
+    background-color: #fff;
+    width: 200px;
+    outline: none;
+}
+
+#search-bar:hover,
+#search-bar:focus {
+    border-color: var(--secondary-color);
+}
+
+#genre-filter,
+#artist-filter {
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid var(--main-color);
+    background-color: #fff;
+    cursor: pointer;
+}
+
+#genre-filter:hover,
+#artist-filter:hover {
+    border-color: var(--secondary-color);
+}
+
+#toggle-view {
+    padding: 10px 20px;
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#toggle-view:hover {
+    background-color: #8b3a3f; /* Darkened secondary color */
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 10px 0;
+}
+
+.pagination button {
+    padding: 8px 16px;
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.pagination button:disabled {
+    background-color: var(--button-color);
+    cursor: not-allowed;
+}
+
+.pagination span {
+    font-size: 1rem;
+    color: var(--black);
+}
+
+/* Card View (Grid) */
+.card-container.card-view {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h2 {
+    font-size: 1.3rem;
+    color: var(--secondary-color);
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 1rem;
+    color: var(--black);
+    margin-bottom: 8px;
+}
+
+/* Row View (Compact) */
+.card-container.row-view {
+    display: flex;
+    flex-direction: column;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    border-bottom: 1px solid var(--main-color);
+    padding: 10px;
+    font-size: 0.9rem;
+    color: var(--black);
+}
+
+.row:hover {
+    background-color: var(--main-color-sl);
+}
+
+.row div {
+    flex: 1;
+    text-align: left;
+    padding: 0 5px;
+}
+
+.row div.genre {
+    font-weight: bold;
+    color: var(--secondary-color);
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .card-container.card-view {
+        grid-template-columns: 1fr;
+    }
+
+    .row {
+        font-size: 0.8rem;
+        padding: 8px;
+    }
+
+    .controls {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    #search-bar {
+        width: 100%;
+    }
+}
+
+
+a {
+    text-decoration: none;
+    color: var(--secondary-color);
+}
+
+body {
+    background-color: var(--main-color-sl);
+}
+
+.header{
+    height: 15vh;
+    display: flex;
+    align-items: center;
+    background-color: var(--main-color);
+    padding-left: 4rem;
+}
+
+.genere_section{
+    display: flex;
+    height: 5rem;
+    background-color: var(--main-color);
+    margin: 2rem 1rem 3rem 2rem;
+    padding: 1rem;
+    flex-direction: column;
+}
+
+.genere_extra{
+    display: flex;
+    justify-content: space-between;
+}
