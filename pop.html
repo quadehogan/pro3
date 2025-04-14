@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Collection</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Music Collection</h1>
+    <div class="controls">
+        <input type="text" id="search-bar" placeholder="Search by genre, artist, or album...">
+        <select id="genre-filter">
+            <option value="all">All Genres</option>
+            <!-- Options will be populated dynamically -->
+        </select>
+        <select id="artist-filter">
+            <option value="all">All Artists</option>
+            <!-- Options will be populated dynamically -->
+        </select>
+        <button id="toggle-view">Switch to Row View</button>
+        <div class="pagination">
+            <button id="prev-page-top" disabled>Previous</button>
+            <span id="page-info-top">Page 1</span>
+            <button id="next-page-top">Next</button>
+        </div>
+    </div>
+    <div id="card-container" class="card-container"></div>
+    <div class="pagination">
+        <button id="prev-page-bottom" disabled>Previous</button>
+        <span id="page-info-bottom">Page 1</span>
+        <button id="next-page-bottom">Next</button>
+    </div>
+    <script src="main_m.js"></script>
+</body>
+</html>
