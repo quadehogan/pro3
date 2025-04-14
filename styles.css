@@ -4,3 +4,34 @@
     --black: #000;
     --main-color-sl: hsl(46, 62%, 95%);
 }
+
+a {
+    text-decoration: none;
+    color: var(--secondary-color);
+}
+
+body {
+    background-color: var(--main-color-sl);
+}
+
+.header{
+    height: 15vh;
+    display: flex;
+    align-items: center;
+    background-color: var(--main-color);
+    padding-left: 4rem;
+}
+
+.genere_section{
+    display: flex;
+    height: 5rem;
+    background-color: var(--main-color);
+    margin: 2rem 1rem 3rem 2rem;
+    padding: 1rem;
+    flex-direction: column;
+}
+
+.genere_extra{
+    display: flex;
+    justify-content: space-between;
+}
