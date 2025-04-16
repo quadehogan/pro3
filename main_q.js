@@ -8,9 +8,20 @@ fetch("https://music.is120.ckearl.com/")
 	.then((dataObject) => {
 
         spinner.style.display = "none";
-        
+
 		completeSteps(dataObject["data"]);
-	});
+});
+
+let isDarkMode = false;
+
+function toggleDarkMode() {
+    isDarkMode = !isDarkMode;
+    document.body.setAttribute('data-theme', isDarkMode ? 'dark' : 'light');
+    localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+    document.getElementById('toggle-dark-mode').textContent = isDarkMode ? 'Toggle Light Mode' : 'Toggle Dark Mode';
+}
+
+document.getElementById('toggle-dark-mode').addEventListener('click', toggleDarkMode);
 
 function completeSteps(dataObject) {
     console.log(dataObject)
