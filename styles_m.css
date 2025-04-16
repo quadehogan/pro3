@@ -4,6 +4,20 @@
     --black: #000;
     --main-color-sl: hsl(46, 62%, 95%);
     --button-color: hsl(356, 41%, 70%);
+    --text-color: #000;
+    --card-bg: #fff;
+    --row-hover-bg: hsl(46, 62%, 95%);
+}
+
+[data-theme="dark"] {
+    --main-color: hsl(46, 10%, 20%);
+    --secondary-color: #e57373;
+    --black: #fff;
+    --main-color-sl: hsl(46, 10%, 10%);
+    --button-color: hsl(356, 41%, 50%);
+    --text-color: #fff;
+    --card-bg: hsl(46, 10%, 15%);
+    --row-hover-bg: hsl(46, 10%, 25%);
 }
 
 * {
@@ -16,6 +30,7 @@ body {
     font-family: Arial, sans-serif;
     background-color: var(--main-color-sl);
     padding: 20px;
+    color: var(--text-color);
 }
 
 h1 {
@@ -38,7 +53,8 @@ h1 {
     font-size: 1rem;
     border-radius: 5px;
     border: 1px solid var(--main-color);
-    background-color: #fff;
+    background-color: var(--card-bg);
+    color: var(--text-color);
     width: 200px;
     outline: none;
 }
@@ -54,7 +70,8 @@ h1 {
     font-size: 1rem;
     border-radius: 5px;
     border: 1px solid var(--main-color);
-    background-color: #fff;
+    background-color: var(--card-bg);
+    color: var(--text-color);
     cursor: pointer;
 }
 
@@ -63,16 +80,18 @@ h1 {
     border-color: var(--secondary-color);
 }
 
-#toggle-view {
+#toggle-view,
+#toggle-dark-mode {
     padding: 10px 20px;
     background-color: var(--secondary-color);
-    color: white;
+    color: var(--black);
     border: none;
     border-radius: 5px;
     cursor: pointer;
 }
 
-#toggle-view:hover {
+#toggle-view:hover,
+#toggle-dark-mode:hover {
     background-color: #8b3a3f; /* Darkened secondary color */
 }
 
@@ -87,7 +106,7 @@ h1 {
 .pagination button {
     padding: 8px 16px;
     background-color: var(--secondary-color);
-    color: white;
+    color: var(--black);
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -100,7 +119,7 @@ h1 {
 
 .pagination span {
     font-size: 1rem;
-    color: var(--black);
+    color: var(--text-color);
 }
 
 /* Card View (Grid) */
@@ -113,7 +132,7 @@ h1 {
 }
 
 .card {
-    background-color: #fff;
+    background-color: var(--card-bg);
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 20px;
@@ -132,7 +151,7 @@ h1 {
 
 .card p {
     font-size: 1rem;
-    color: var(--black);
+    color: var(--text-color);
     margin-bottom: 8px;
 }
 
@@ -148,15 +167,15 @@ h1 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #fff;
+    background-color: var(--card-bg);
     border-bottom: 1px solid var(--main-color);
     padding: 10px;
     font-size: 0.9rem;
-    color: var(--black);
+    color: var(--text-color);
 }
 
 .row:hover {
-    background-color: var(--main-color-sl);
+    background-color: var(--row-hover-bg);
 }
 
 .row div {
@@ -191,17 +210,12 @@ h1 {
     }
 }
 
-
 a {
     text-decoration: none;
     color: var(--secondary-color);
 }
 
-body {
-    background-color: var(--main-color-sl);
-}
-
-.header{
+.header {
     height: 15vh;
     display: flex;
     align-items: center;
@@ -209,7 +223,7 @@ body {
     padding-left: 4rem;
 }
 
-.genere_section{
+.genere_section {
     display: flex;
     height: 5rem;
     background-color: var(--main-color);
@@ -218,7 +232,7 @@ body {
     flex-direction: column;
 }
 
-.genere_extra{
+.genere_extra {
     display: flex;
     justify-content: space-between;
 }

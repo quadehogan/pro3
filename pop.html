@@ -7,9 +7,15 @@
     <link rel="stylesheet" href="styles_m.css">
 </head>
 <body>
+    <a href="./index.html">Return to Home Page</a>
+    
     <h1>Music Collection</h1>
     <div class="controls">
-        <input type="text" id="search-bar" placeholder="Search by genre, artist, or album...">
+        <button id="toggle-view">Switch to Row View</button>
+        <button id="toggle-dark-mode">Toggle Dark Mode</button>
+    </div>
+    <div class="controls">
+        <input type="text" id="search-bar" placeholder="Genre, Artist, or Album...">
         <select id="genre-filter">
             <option value="all">All Genres</option>
             <!-- Options will be populated dynamically -->
@@ -18,7 +24,6 @@
             <option value="all">All Artists</option>
             <!-- Options will be populated dynamically -->
         </select>
-        <button id="toggle-view">Switch to Row View</button>
         <div class="pagination">
             <button id="prev-page-top" disabled>Previous</button>
             <span id="page-info-top">Page 1</span>
@@ -31,6 +36,7 @@
         <span id="page-info-bottom">Page 1</span>
         <button id="next-page-bottom">Next</button>
     </div>
+    <a href="./index.html">Return to Home Page</a>
     <script src="main_m.js"></script>
 </body>
 </html>

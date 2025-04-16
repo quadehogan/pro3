@@ -14,7 +14,7 @@ async function fetchMusicData() {
     }
 }
 
-// State for view, pagination, filters, and search
+// State for view, pagination, filters, search, and theme
 let isCardView = true;
 let currentPage = 1;
 const itemsPerPage = 48;
@@ -22,7 +22,16 @@ let allSongs = [];
 let filteredSongs = [];
 let selectedGenre = 'all';
 let selectedArtist = 'all';
-let searchTerm = ''; // New state for search term
+let searchTerm = '';
+let isDarkMode = false;
+
+// Function to toggle dark mode
+function toggleDarkMode() {
+    isDarkMode = !isDarkMode;
+    document.body.setAttribute('data-theme', isDarkMode ? 'dark' : 'light');
+    localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+    document.getElementById('toggle-dark-mode').textContent = isDarkMode ? 'Toggle Light Mode' : 'Toggle Dark Mode';
+}
 
 // Function to create a card (grid view)
 function createCard(song, artistName, genreName, albumName) {
@@ -210,14 +219,29 @@ async function populateSongs() {
     renderItems();
 }
 
-// Toggle view
+// Initialize theme based on localStorage
+function initializeTheme() {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+        isDarkMode = true;
+        document.body.setAttribute('data-theme', 'dark');
+        document.getElementById('toggle-dark-mode').textContent = 'Toggle Light Mode';
+    } else {
+        isDarkMode = false;
+        document.body.setAttribute('data-theme', 'light');
+        document.getElementById('toggle-dark-mode').textContent = 'Toggle Dark Mode';
+    }
+}
+
+// Event listeners
 document.getElementById('toggle-view').addEventListener('click', () => {
     isCardView = !isCardView;
     document.getElementById('toggle-view').textContent = isCardView ? 'Switch to Row View' : 'Switch to Card View';
     renderItems();
 });
 
-// Genre filter
+document.getElementById('toggle-dark-mode').addEventListener('click', toggleDarkMode);
+
 document.getElementById('genre-filter').addEventListener('change', (e) => {
     selectedGenre = e.target.value;
     selectedArtist = 'all'; // Reset artist filter when genre changes
@@ -227,14 +251,12 @@ document.getElementById('genre-filter').addEventListener('change', (e) => {
     renderItems();
 });
 
-// Artist filter
 document.getElementById('artist-filter').addEventListener('change', (e) => {
     selectedArtist = e.target.value;
     currentPage = 1; // Reset to first page
     renderItems();
 });
 
-// Search bar
 document.getElementById('search-bar').addEventListener('input', (e) => {
     searchTerm = e.target.value;
     selectedGenre = 'all'; // Reset genre filter
@@ -246,7 +268,6 @@ document.getElementById('search-bar').addEventListener('input', (e) => {
     renderItems();
 });
 
-// Pagination event listeners
 document.getElementById('prev-page-top').addEventListener('click', () => {
     if (currentPage > 1) {
         currentPage--;
@@ -277,5 +298,6 @@ document.getElementById('next-page-bottom').addEventListener('click', () => {
 // Initialize
 document.addEventListener('DOMContentLoaded', () => {
     console.log('Page loaded, fetching data...');
+    initializeTheme();
     populateSongs();
 });
