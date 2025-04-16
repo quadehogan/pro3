@@ -62,10 +62,7 @@ function genreSectionDevelopment(dataObject){
         if (navlink.innerHTML === "pop"){
             navlink.style.paddingLeft = "3rem";
         }
-
         navigation.appendChild(navlink)
-
-        console.log(navlink)
 
         // Declare Section
         let artistsSections = document.getElementById(`${name}_artists`)
