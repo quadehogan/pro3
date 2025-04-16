@@ -59,13 +59,24 @@ body {
     background-color: var(--main-color-sl);
 }
 
+.top{
+    display: flex;
+    flex-direction: column;
+    border-bottom: 0.5rem solid var(--secondary-color);
+}
+
+#navigation{
+    display: flex;
+    justify-content: space-around;
+    background-color: var(--main-color);
+}
+
 .header{
     height: 15vh;
     display: flex;
     align-items: center;
     background-color: var(--main-color);
     padding-left: 4rem;
-    border-bottom: 0.5rem solid var(--secondary-color);
     justify-content: space-between;
 }
 

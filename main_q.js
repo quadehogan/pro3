@@ -43,9 +43,29 @@ function genreSectionDevelopment(dataObject){
         // Set up Artists for each Genre
         let name = genreObject.genre_name;
         let genreName = document.getElementById(name)
+        let navigation = document.getElementById("navigation")
+        let navlink = document.createElement("a")
+
         genreName.innerHTML = `${name} artists`;
-        genreName.style.color = "var(--secondary-color)"
-        genreName.style.fontSize = "1.5rem"
+        genreName.style.color = "var(--secondary-color)";
+        genreName.style.fontSize = "1.5rem";
+
+        navlink.innerHTML = name;
+        navlink.href = `#${name}`;
+        navlink.style.color = "var(--secondary-color)";
+        navlink.style.textDecoration = "none";
+        if (navlink.innerHTML != "metal"){
+            navlink.style.borderRight = "1px solid var(--secondary-color)";
+        }
+        navlink.style.marginBottom = "0.5rem";
+        navlink.style.paddingRight = "3rem";
+        if (navlink.innerHTML === "pop"){
+            navlink.style.paddingLeft = "3rem";
+        }
+
+        navigation.appendChild(navlink)
+
+        console.log(navlink)
 
         // Declare Section
         let artistsSections = document.getElementById(`${name}_artists`)
