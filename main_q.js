@@ -52,7 +52,6 @@ function genreSectionDevelopment(dataObject){
 
         navlink.innerHTML = name;
         navlink.href = `#${name}`;
-        navlink.style.color = "var(--secondary-color)";
         navlink.style.textDecoration = "none";
         if (navlink.innerHTML != "metal"){
             navlink.style.borderRight = "1px solid var(--secondary-color)";
@@ -62,6 +61,7 @@ function genreSectionDevelopment(dataObject){
         if (navlink.innerHTML === "pop"){
             navlink.style.paddingLeft = "3rem";
         }
+        navlink.classList.add("text_hover");
         navigation.appendChild(navlink)
 
         // Declare Section
